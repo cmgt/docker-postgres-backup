@@ -1,5 +1,5 @@
-FROM postgres:10-alpine
-MAINTAINER Jonatan Heyman <http://heyman.info>
+FROM postgres:12-alpine
+MAINTAINER Jonatan Heyman <http://heyman.info> with fork cm_gt <https://github.com/cmgt>
 
 # Install dependencies
 RUN apk update && apk add --no-cache --virtual .build-deps && apk add \

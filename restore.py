@@ -6,6 +6,8 @@ import sys
 from datetime import datetime
 
 BACKUP_DIR = os.environ["BACKUP_DIR"]
+AWS_ENDPOINT = os.environ["AWS_ENDPOINT"]
+AWS_REGION = os.environ["AWS_DEFAULT_REGION"]
 S3_PATH = os.environ["S3_PATH"]
 DB_NAME = os.environ["DB_NAME"]
 DB_PASS = os.environ["DB_PASS"]
@@ -49,7 +51,7 @@ def restore_backup():
     ))
 
 def download_backup():
-    cmd("aws s3 cp %s%s %s" % (S3_PATH, file_name, backup_file))
+    cmd("aws --endpoint-url=%s --region=%s s3 cp %s%s %s" % (AWS_ENDPOINT, AWS_REGION, S3_PATH, file_name, backup_file))
 
 def log(msg):
     print "[%s]: %s" % (datetime.now().strftime("%Y-%m-%d %H:%M:%S"), msg)

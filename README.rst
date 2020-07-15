@@ -16,6 +16,7 @@ Required environment variables
 * :code:`AWS_ACCESS_KEY_ID`
 * :code:`AWS_SECRET_ACCESS_KEY`
 * :code:`AWS_DEFAULT_REGION`
+* :code:`AWS_ENDPOINT` other s3 providers, like as DO https://sfo2.digitaloceanspaces.com
 
 Optional environment variables
 ==============================
